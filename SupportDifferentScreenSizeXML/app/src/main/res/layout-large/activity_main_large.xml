@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="48dp"
+    android:layout_margin="32dp"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:minWidth="250dp"
+        android:minHeight="60dp"
+        android:layout_marginBottom="20dp"
+        android:text="Button" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:minWidth="250dp"
+        android:minHeight="60dp"
+        android:layout_marginBottom="20dp"
+        android:text="Button" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginBottom="20dp"
+        app:srcCompat="@drawable/logo" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:minWidth="250dp"
+        android:minHeight="60dp"
+        android:layout_marginBottom="20dp"
+        android:text="Button" />
+
+    <EditText
+        android:id="@+id/editTextText"
+        android:layout_width="350dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="20dp"
+        android:ems="10"
+        android:textSize="20sp"
+        android:inputType="text"
+        android:text="Name" />
+
+    <EditText
+        android:id="@+id/editTextText2"
+        android:layout_width="350dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="20dp"
+        android:ems="10"
+        android:textSize="20sp"
+        android:inputType="text"
+        android:text="Name" />
+
+    <RadioButton
+        android:id="@+id/radioButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        android:layout_marginBottom="20dp"
+        android:text="RadioButton" />
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        android:layout_marginBottom="20dp"
+        android:text="Switch" />
+
+    <ToggleButton
+        android:id="@+id/toggleButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        android:layout_marginBottom="20dp"
+        android:text="ToggleButton" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:minWidth="250dp"
+        android:minHeight="60dp"
+        android:text="Button" />
+
+</LinearLayout>

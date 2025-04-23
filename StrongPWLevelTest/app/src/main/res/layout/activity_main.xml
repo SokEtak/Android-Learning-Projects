@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="68dp">
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/textInputUsername"
+        android:layout_width="0dp"
+        android:layout_height="50sp"
+        android:layout_marginTop="172dp"
+        android:hint="@string/username_or_password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextPassword"
+        android:layout_width="411dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="62dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/password"
+        android:inputType="numberPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputUsername" />
+
+    <EditText
+        android:id="@+id/editTextRePassword"
+        android:layout_width="411dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="43dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/repassword"
+        android:inputType="numberPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="127dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="142dp"
+        android:layout_marginTop="51dp"
+        android:layout_marginEnd="142dp"
+        android:text="@string/sing_up"
+        android:textSize="48sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="161dp"
+        android:layout_marginTop="66dp"
+        android:layout_marginEnd="160dp"
+        android:text="@string/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextRePassword" />
+
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="69dp"
+        android:text="@string/textview"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/textInputUsername"
+        app:layout_constraintEnd_toEndOf="@+id/textInputUsername" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="407dp"
+        android:layout_height="0dp"
+        android:max="100"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="454dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

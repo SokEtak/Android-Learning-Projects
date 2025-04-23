@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ច្រើនភាសារ</string>
+    <string name="hello_world">សួស្តីពិភពលោក</string>
+    <string name="show_toast">បង្ហាញសារ</string>
+    <string name="toastMessage">នេះគឺជាសាររបស់ Toast</string>
+</resources>

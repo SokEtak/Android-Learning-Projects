@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginHorizontal="10dp"
+    android:layout_marginVertical="10dp"
+    app:cardCorner_Radius="20dp"
+    app:cardElevation="8dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/img"
+            android:layout_width="188dp"
+            android:layout_height="127dp"
+            android:adjustViewBounds="true"
+            android:padding="8dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/cambodia"
+            app:layout_constraintStart_toBottomOf="parent"
+            app:layout_constraintStart_toTopOf="parent"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+        <TextView
+            android:id="@+id/cambodia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tvCam"
+            android:textColor="@color/black"
+            android:textSize="34sp"
+
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="220dp"
+            tools:layout_editor_absoluteY="57dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

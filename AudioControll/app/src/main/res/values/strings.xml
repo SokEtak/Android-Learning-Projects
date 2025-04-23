@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">AudioControll</string>
+    <string name="rewind"><![CDATA[<<]]></string>
+    <string name="doNext"><![CDATA[>>]]></string>
+    <string name="dev_name">sok lyminh handsome</string>
+</resources>

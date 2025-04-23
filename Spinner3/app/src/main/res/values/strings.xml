@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Spinner3</string>
+    <array name="countries">
+        <item>Cambodia</item>
+        <item>Laos</item>
+        <item>Myanma</item>
+        <item>Kkorea</item>
+        <item>Japan</item>
+        <item>Taiwan</item>
+        <item>United State</item>
+        <item>Indonesia</item>
+        <item>Malaysia</item>
+        <item>Singapore</item>
+    </array>
+</resources>

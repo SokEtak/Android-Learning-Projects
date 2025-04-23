@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">SnackBarFinalDemo</string>
+    <string name="tvText">SnackBar Demo</string>
+    <string name="D_SnackBar">Default SnackBar</string>
+    <string name="Action_SnackBar">Action SnackBar</string>
+    <string name="custom_SnackBar">Custom SnackBar</string>
+</resources>

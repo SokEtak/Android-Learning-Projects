@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">GridView</string>
+    <string name="item_name">Item Name</string>
+    <string name="todo">TODO</string>
+</resources>

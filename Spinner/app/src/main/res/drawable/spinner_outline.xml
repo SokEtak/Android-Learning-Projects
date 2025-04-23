@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:tools="http://schemas.android.com/tools" xmlns:android="http://schemas.android.com/apk/res/android">
+    <shape tools:ignore="ExtraText">
+        <solid android:color="#FFFFFF"/> <!-- Background color of the Spinner -->
+        <corners android:radius="8dp"/>  <!-- Rounded corners -->
+        <stroke
+            android:color="#000000" /> <!-- Outline color -->
+        android:width="2dp"/>    <!-- Outline thickness -->
+    </shape>
+
+</selector>

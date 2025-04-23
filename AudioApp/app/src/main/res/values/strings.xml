@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">AudioApp</string>
+    <string name="doNext"><![CDATA[>>]]></string>
+    <string name="rewind"><![CDATA[<<]]></string>
+    <string name="pause">Pause</string>
+    <string name="play">Play</string>
+</resources>

@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Spinner</string>
+    <array name="computer_Model">
+        <item>Rog Ally</item>
+        <item>Rog Ally X</item>
+        <item>Asus Tuf</item>
+        <item>Asus</item>
+        <item>Rog Strict</item>
+        <item>Asus Tuf Gaming</item>
+    </array>
+</resources>
