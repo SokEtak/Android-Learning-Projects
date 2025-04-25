@@ -38,6 +38,7 @@ android {
 
 dependencies {
 
+    implementation(libs.androidx.ui.android)
     val roomVersion = "2.6.1"
     val lifecycleVersion = "2.6.2"
 
