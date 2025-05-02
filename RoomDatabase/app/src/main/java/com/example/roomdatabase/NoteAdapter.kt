@@ -9,8 +9,8 @@ import com.example.roomdatabase.Model.Note
 
 class NoteAdapter(
     private var notes: List<Note>,
-    private val onItemClick: (Note) -> Unit, // Listener for item click
-    private val onItemLongClick: (Note) -> Unit // <- Add this
+    private val onItemClick: (Note) -> Unit,
+    private val onItemLongClick: (Note) -> Unit
 ) : RecyclerView.Adapter<NoteAdapter.NoteViewHolder>() {
 
     class NoteViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

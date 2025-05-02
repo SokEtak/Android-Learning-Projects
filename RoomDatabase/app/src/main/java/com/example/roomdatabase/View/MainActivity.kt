@@ -81,7 +81,7 @@ class MainActivity : AppCompatActivity() {
 
         toolbar.setNavigationOnClickListener {
             isMenuOpen = !isMenuOpen
-            val iconRes = if (isMenuOpen) R.drawable.ic_menu_open24d else R.drawable.ic_menu24
+            val iconRes = if (isMenuOpen) R.drawable.ic_menu_open24 else R.drawable.ic_menu24
             toolbar.setNavigationIcon(iconRes)
         }
 
