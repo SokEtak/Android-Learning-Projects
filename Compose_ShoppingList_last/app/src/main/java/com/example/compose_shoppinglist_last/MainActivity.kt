@@ -40,5 +40,11 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+@Preview
+@Composable
+fun SimpleComposablePreview() {
+    ShoppingListApp()
+}
+
 
 

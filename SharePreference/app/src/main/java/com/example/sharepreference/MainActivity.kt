@@ -11,6 +11,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.core.content.edit
 
 class MainActivity : AppCompatActivity() {
     lateinit var name: EditText
@@ -24,7 +25,7 @@ class MainActivity : AppCompatActivity() {
     var userMessage: String? = null
     var userRemember: Boolean = false
 
-    @SuppressLint("SetTextI18n")
+    //@SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -49,28 +50,29 @@ class MainActivity : AppCompatActivity() {
             count.text = counter.toString()
             saveData()
         }
+        remember.setOnCheckedChangeListener { _,_->
+            saveData()
+        }
     }
 
-    @SuppressLint("CommitPrefEdits")
+
     private fun saveData() {
         sharedPreferences = this.getSharedPreferences("saveData", Context.MODE_PRIVATE)
-
-        val editor = sharedPreferences.edit()
-        editor.putString("Key name", name.text.toString())
-        editor.putString("Key message", message.text.toString())
-        editor.putInt("Key count", counter)
-        editor.putBoolean("Key remember", remember.isChecked)  // Fixed Key
-        editor.apply()
+        sharedPreferences.edit() {
+            putString("Key name", name.text.toString())
+            putString("Key message", message.text.toString())
+            putInt("Key count", counter)
+            putBoolean("Key remember", remember.isChecked)  // Fixed Key
+        }
     }
 
-    @SuppressLint("SetTextI18n")
     private fun retrieveData() {
         sharedPreferences = this.getSharedPreferences("saveData", Context.MODE_PRIVATE)
 
         userName = sharedPreferences.getString("Key name", "")
         userMessage = sharedPreferences.getString("Key message", "")
         counter = sharedPreferences.getInt("Key count", 0) // Fixed Key
-        userRemember = sharedPreferences.getBoolean("Key remember", false)
+        userRemember = sharedPreferences.getBoolean("Key remember",false)
 
         name.setText(userName ?: "")
         message.setText(userMessage ?: "")

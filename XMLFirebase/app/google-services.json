@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "146750806539",
+    "firebase_url": "https://fir-e852e-default-rtdb.firebaseio.com",
+    "project_id": "fir-e852e",
+    "storage_bucket": "fir-e852e.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:146750806539:android:9946d2093acb8930e1c50e",
+        "android_client_info": {
+          "package_name": "com.example.xmlfirebase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC09jDjh9ZLOWiKhLf4IbxHt33xsIkr9OQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -48,7 +48,7 @@ fun CategoryScreen(categories: List<Category>, navigateToDetail: (Category) -> U
 fun CategoryItem(category: Category, navigateToDetail: (Category) -> Unit) {
     Column(
         modifier = Modifier
-            .padding(8.dp)
+            .padding(5.dp)
             .fillMaxSize()
             .clickable { navigateToDetail(category) },
         horizontalAlignment = Alignment.CenterHorizontally
