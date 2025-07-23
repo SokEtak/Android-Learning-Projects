@@ -1,6 +1,7 @@
 package com.example.roomdatabaseschool
 
 import android.app.Application
+import com.example.roomdatabaseschool.Repository.NoteRepository
 import com.example.roomdatabaseschool.Room.NoteDatabase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.SupervisorJob

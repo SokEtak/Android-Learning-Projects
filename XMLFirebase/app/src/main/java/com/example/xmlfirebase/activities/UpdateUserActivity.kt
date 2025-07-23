@@ -1,4 +1,4 @@
-package com.example.xmlfirebase
+package com.example.xmlfirebase.activities
 
 import android.os.Bundle
 import android.widget.Toast
@@ -6,6 +6,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.xmlfirebase.R
 import com.example.xmlfirebase.databinding.ActivityUpdateUserBinding
 import com.google.firebase.database.FirebaseDatabase
 

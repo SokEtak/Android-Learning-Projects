@@ -12,7 +12,7 @@ import kotlinx.coroutines.flow.Flow
 interface NoteDao {
     //using suspend to make it not run on Main Thread
     //prevent from stucking the app
-    //kotlin corotine
+    //kotlin coroutine
 
 
     @Insert
@@ -30,5 +30,6 @@ interface NoteDao {
     //No need to use suspend keyword
     @Query("SELECT * FROM note_table ORDER BY id ASC")
     //to make it observe from database data(make it update automatically when we update,insert,...),should use it with Flow
+    //Flow is return as live data
     fun getAllNotes(): Flow<List<Note>>
 }

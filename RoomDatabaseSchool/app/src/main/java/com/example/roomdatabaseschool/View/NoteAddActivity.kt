@@ -22,6 +22,7 @@ class NoteAddActivity : AppCompatActivity() {
     private lateinit var titleEt: TextView
     private lateinit var descriptionEt: TextView
     private lateinit var saveBtn: Button
+    private lateinit var cancelBtn: Button
 
     // make it **lateinit var** but _initialize_ it in onCreate
     private lateinit var noteViewModel: NoteViewModel
@@ -35,7 +36,8 @@ class NoteAddActivity : AppCompatActivity() {
         // ── view binding (simplified) ────────────────────────────────
         titleEt       = findViewById(R.id.edtTittle)
         descriptionEt = findViewById(R.id.edtDescription)
-        saveBtn       = findViewById(R.id.btnAddSave)
+        saveBtn       = findViewById(R.id.btnUpdate)
+        cancelBtn     = findViewById(R.id.btnCancelUpdate)
 
         // ── initialise ViewModel safely ──────────────────────────────
         val dao = NoteDatabase.getDatabase(application, lifecycleScope).getNoteDao()
@@ -59,6 +61,10 @@ class NoteAddActivity : AppCompatActivity() {
             // return to list screen
             startActivity(Intent(this, MainActivity::class.java))
             finish()               // optional: kill this screen
+        }
+        cancelBtn.setOnClickListener {
+//            startActivity(Intent(this,MainActivity::class.java))
+              finish()
         }
     }
 }

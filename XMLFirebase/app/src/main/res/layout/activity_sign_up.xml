@@ -1,10 +1,206 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignUpActivity">
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- Main content view: This will contain your original layout and a Toolbar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- Toolbar for the hamburger icon and title -->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+        <!-- Your original ConstraintLayout goes here as the main content below the Toolbar -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/grey_light"
+            android:padding="16dp"
+            tools:context=".activities.SignUpActivity">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="24dp"
+                    app:layout_constraintVertical_chainStyle="packed">
+
+                    <TextView
+                        android:id="@+id/tvAppTitleSignUp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Join Us!"
+                        android:textSize="36sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorPrimaryDark"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginTop="32dp"
+                        android:layout_marginBottom="32dp"
+                        app:layout_constraintBottom_toTopOf="@+id/cardSignUp"
+                        app:layout_constraintVertical_chainStyle="packed"/>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardSignUp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="8dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        app:layout_constraintTop_toBottomOf="@+id/tvAppTitleSignUp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toTopOf="@+id/tvLoginPrompt"
+                        android:background="@drawable/card_border_background">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="24dp">
+
+                            <TextView
+                                android:id="@+id/tvSignUpCardTitle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Sign Up"
+                                android:textSize="28sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/text_color_primary"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                android:layout_marginBottom="24dp"
+                                app:layout_constraintBottom_toTopOf="@+id/edtSignUpEmail" />
+
+                            <EditText
+                                android:id="@+id/edtSignUpEmail"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:hint="Email"
+                                android:inputType="textEmailAddress"
+                                android:padding="12dp"
+                                android:background="@drawable/rounded_edittext_background"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/tvSignUpCardTitle"
+                                app:layout_constraintBottom_toTopOf="@+id/edtSignUpPassword"
+                                android:layout_marginBottom="16dp" />
+
+                            <EditText
+                                android:id="@+id/edtSignUpPassword"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:hint="Password"
+                                android:inputType="textPassword"
+                                android:padding="12dp"
+                                android:background="@drawable/rounded_edittext_background"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/edtSignUpEmail"
+                                app:layout_constraintBottom_toTopOf="@+id/edtConfirmPassword"
+                                android:layout_marginBottom="16dp" />
+
+                            <EditText
+                                android:id="@+id/edtConfirmPassword"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:hint="Confirm Password"
+                                android:inputType="textPassword"
+                                android:padding="12dp"
+                                android:background="@drawable/rounded_edittext_background"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/edtSignUpPassword"
+                                app:layout_constraintBottom_toTopOf="@+id/btnSignUp"
+                                android:layout_marginBottom="24dp" />
+
+                            <Button
+                                android:id="@+id/btnSignUp"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="Sign Up"
+                                android:padding="14dp"
+                                android:textSize="18sp"
+                                android:backgroundTint="@color/colorPrimary"
+                                android:textColor="@color/white"
+                                app:cornerRadius="8dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/edtConfirmPassword"
+                                app:layout_constraintBottom_toBottomOf="parent" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:id="@+id/tvLoginPrompt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Already have an account?"
+                        android:textSize="16sp"
+                        android:textColor="@color/text_color_secondary"
+                        android:layout_marginTop="24dp"
+                        android:padding="4dp"
+                        app:layout_constraintTop_toBottomOf="@+id/cardSignUp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toTopOf="@+id/btnLoginFromSignUp" />
+
+                    <Button
+                        android:id="@+id/btnLoginFromSignUp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Login"
+                        android:padding="14dp"
+                        android:textSize="18sp"
+                        android:backgroundTint="@color/colorAccent"
+                        android:textColor="@color/white"
+                        app:cornerRadius="8dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginTop="16dp"
+                        app:layout_constraintTop_toBottomOf="@+id/tvLoginPrompt"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </ScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+    <!-- The Navigation View for the drawer -->
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/nav_header_main"
+        app:menu="@menu/activity_main_drawer" />
+
+</androidx.drawerlayout.widget.DrawerLayout>

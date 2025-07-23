@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Your existing colors -->
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="purple">#FF9C27B0</color> <!-- Assuming this is your existing purple -->
+    <color name="light_red">#FF6B6B</color>
+    <color name="light_green">#4CAF50</color> <!-- or use #81C784 for a softer tone -->
+    <!-- New colors for swipe actions -->
+    <color name="red_delete">#FF4081</color>  <!-- A vibrant red for delete -->
+    <color name="green_achieved">#4CAF50</color> <!-- A green for achieved -->
 </resources>

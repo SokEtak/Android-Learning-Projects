@@ -1,16 +1,11 @@
-package com.example.coutermvvm
+package com.example.coutermvvm   // (typo kept if this is your package)
 
 import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Button
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -30,7 +25,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            val viewModel : CounterViewModel = viewModel()
+            val viewModel: CounterViewModel = viewModel()
             CouterMVVMTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) {
                     CounterApp(viewModel)
@@ -42,39 +37,46 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun CounterApp(viewModel: CounterViewModel) {
-
-//    val count = remember { mutableStateOf(0) }
-
     Column(
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
         Text(
-            text = "Count:${viewModel.count.value}",
+            text = "Count: ${viewModel.count.value}",
             fontSize = 24.sp,
             fontWeight = FontWeight.SemiBold
         )
 
-        //add height spacing
         Spacer(modifier = Modifier.height(20.dp))
-        Row {
-            Button(onClick = { viewModel.increment()}, enabled = viewModel.count.value>-1) {
+
+        Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+            Button(
+                onClick = { viewModel.increment() },
+                enabled = true                    // always enabled
+            ) {
                 Text("Increment")
             }
-            Button(onClick = { viewModel.decrement() } , enabled = viewModel.count.value>0) {
+            Button(
+                onClick = { viewModel.decrement() },
+                enabled = viewModel.count.value > 0   // disabled when 0
+            ) {
                 Text("Decrement")
             }
         }
     }
 }
 
+/* ---------- Preview ---------- */
+
 @Preview(showBackground = true)
 @Composable
 fun CounterAppPreview() {
+    // Use a *plain instance* (or a fake) because ViewModelStoreOwner
+    // isn't present in design / preview mode.
+    val previewVm = CounterViewModel()
+
     CouterMVVMTheme {
-       CounterApp(
-           viewModel = viewModel()
-       )
+        CounterApp(viewModel = previewVm)
     }
 }

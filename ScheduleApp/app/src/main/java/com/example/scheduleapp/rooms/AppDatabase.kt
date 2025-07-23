@@ -1,26 +1,32 @@
 package com.example.scheduleapp.rooms
 
+import AchievesTodo
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import com.example.scheduleapp.models.Todos
-import com.example.scheduleapp.models.AchievedTodos
+import com.example.scheduleapp.models.Todo
 import com.example.scheduleapp.rooms.dao.TodosDao
-import com.example.scheduleapp.rooms.dao.AchievedTodosDao
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.example.scheduleapp.Converters
+import com.example.scheduleapp.rooms.dao.AchievesTodoDao
+import java.util.Date
 
-@Database(entities = [Todos::class, AchievedTodos::class], version = 1)
+@Database(
+    entities = [Todo::class],
+    views = [AchievesTodo::class],
+    version = 4,
+    exportSchema = false
+)
 @TypeConverters(Converters::class)
 
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun todosDao(): TodosDao
-    abstract fun achievedTodosDao(): AchievedTodosDao
+    abstract fun achievesTodoDao(): AchievesTodoDao
 
     companion object {
         @Volatile
@@ -34,6 +40,7 @@ abstract class AppDatabase : RoomDatabase() {
                     "app_database"
                 )
                     .addCallback(AppDatabaseCallback(scope))
+                    .fallbackToDestructiveMigration(false) // 👈 add this
                     .build()
                 INSTANCE = instance
                 return instance
@@ -49,30 +56,19 @@ abstract class AppDatabase : RoomDatabase() {
             super.onCreate(db)
             INSTANCE?.let { database ->
                 val todosDao = database.todosDao()
-                val achievedDao = database.achievedTodosDao()
-
+                val achievesTodo = database.achievesTodoDao()
                 scope.launch {
                     // Example pre-populate Todos
-                    todosDao.insert(Todos(
+                    todosDao.insert(Todo(
                         tittle = "Sample Todo",
                         description = "This is a sample todo",
-                        startDate = java.util.Date(),
-                        dueDate = java.util.Date(),
+                        startDate = Date(),
+                        dueDate = Date(),
                         isComplete = false,
                         place = "Home",
-                        completedDate = java.util.Date()
+                        completedDate = Date()
                     ))
 
-                    // Example pre-populate AchievedTodos
-                    achievedDao.insert(AchievedTodos(
-                        tittle = "Completed Todo",
-                        description = "This is an achieved todo",
-                        startDate = java.util.Date(),
-                        finishDate = java.util.Date(),
-                        isComplete = true,
-                        place = "Office",
-                        completedDate = java.util.Date()
-                    ))
                 }
             }
         }

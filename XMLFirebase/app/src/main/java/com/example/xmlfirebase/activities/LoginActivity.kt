@@ -1,4 +1,4 @@
-package com.example.xmlfirebase
+package com.example.xmlfirebase.activities
 
 import android.content.Intent
 import android.os.Bundle

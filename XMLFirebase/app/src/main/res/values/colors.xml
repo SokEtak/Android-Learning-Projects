@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Existing colors layout -->
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="grey_light">#F5F5F5</color>
+    <color name="white">#FFFFFF</color>
+    <color name="text_color_primary">#212121</color>
+    <color name="text_color_secondary">#757575</color>
+
+    <!-- Colors for navigation drawer -->
+    <color name="side_nav_bar_start">#6200EE</color>
+    <color name="side_nav_bar_end">#03DAC5</color>
+</resources>

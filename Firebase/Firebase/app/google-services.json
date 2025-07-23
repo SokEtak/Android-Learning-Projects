@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "91876969288",
+    "firebase_url": "https://demoproject-66c5a-default-rtdb.firebaseio.com",
+    "project_id": "demoproject-66c5a",
+    "storage_bucket": "demoproject-66c5a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:91876969288:android:44632da0dcbcb53390417d",
+        "android_client_info": {
+          "package_name": "com.nubb.firebase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAuSMhvS4xjn-CAgCpu2EPX0IcwUfuWTO4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

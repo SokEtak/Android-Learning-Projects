@@ -5,11 +5,13 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.viewmodel.CreationExtras
 import com.example.roomdatabaseschool.Model.Note
-import com.example.roomdatabaseschool.NoteRepository
+import com.example.roomdatabaseschool.Repository.NoteRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
+//prevent from rotating screen
 class NoteViewModel(var repository: NoteRepository) : ViewModel() {
     var myAllNotes : LiveData<List<Note>> = repository.myAllNotes.asLiveData()
 
@@ -34,14 +36,18 @@ class NoteViewModel(var repository: NoteRepository) : ViewModel() {
     }
 }
 
-class NoteViewModelFactory(var repository: NoteRepository):ViewModelProvider.Factory{
+class NoteViewModelFactory(
+    private val repository: NoteRepository
+) : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        super.create(modelClass)
-
         if (modelClass.isAssignableFrom(NoteViewModel::class.java)) {
             return NoteViewModel(repository) as T
-        } else {
-            throw IllegalStateException("Unknown ViewModel Class")
         }
+        throw IllegalArgumentException("Unknown ViewModel class")
+    }
+
+    // ✅ Add this method to avoid the crash
+    override fun <T : ViewModel> create(modelClass: Class<T>, extras: CreationExtras): T {
+        return create(modelClass)
     }
 }

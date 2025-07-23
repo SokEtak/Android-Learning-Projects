@@ -27,19 +27,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val noteList : List<Note> = listOf(
-            Note(title="Title1", description = "Desciption1"),
-            Note(title="Title2", description = "Desciption2"),
-            Note(title="Title3", description = "Desciption3")
-        )
-
-
-
         // Setup RecyclerView
         recyclerView = findViewById(R.id.noteRecyclerView)
 
         adapter = NoteAdapter(
-            noteList,
+            emptyList(),
             onItemClick = { note ->
                 Toast.makeText(this, "Selected: ${note.title}", Toast.LENGTH_SHORT).show()
             },

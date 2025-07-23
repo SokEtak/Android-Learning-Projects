@@ -1,3 +1,5 @@
+import org.gradle.kotlin.dsl.implementation
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -45,12 +47,13 @@ dependencies {
     implementation (libs.androidx.lifecycle.viewmodel.compose) // or the latest version
 
     //network call
-    implementation("com.squareup.retrofit2:retrofit:2.9.0 ")
+    implementation(libs.retrofit)
     //Json Kotlin object mapping
-    implementation("com.squareup.retrofit2:convertor-gson:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+
 
     //image load
-    implementation("io.coil-kt:coil-compose:2.4.0")
+    implementation(libs.coil.compose)
     implementation (libs.androidx.runtime.livedata)       // if needed for LiveData
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

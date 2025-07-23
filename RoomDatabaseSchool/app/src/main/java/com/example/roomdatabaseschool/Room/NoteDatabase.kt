@@ -52,6 +52,11 @@ abstract class NoteDatabase:RoomDatabase() {
                     noteDao.insert(Note("Title5","Description5"))
                     noteDao.insert(Note("Title6","Description6"))
                     noteDao.insert(Note("Title7","Description7"))
+                    noteDao.insert(Note("Title8","Description8"))
+                    noteDao.insert(Note("Title9","Description9"))
+                    noteDao.insert(Note("Title10","Description10"))
+                    noteDao.insert(Note("Title11","Description11"))
+                    noteDao.insert(Note("Title12","Description12"))
                 }
             }
         }
